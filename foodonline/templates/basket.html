@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% block title %}
+<title>Krepšelis</title>
+{% endblock %}
+
+<body>
+<h1>Krepšelis</h1>
+<p>Palyginkite produktų krepšielio sumas skirtingose parduotuvėse</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Produktas</th>
+      <th>BARBORA kaina</th>
+      <th>RIMI kaina</th>
+      <th>AIBĖ kaina</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if cart_products %}
+      {% for product in cart_products %}
+        <tr>
+          <td><a href="{% url 'product_detail' product_id=product.id %}">{{ product.name }}</a></td>
+          <td>
+            {% for price in product.price_set.all %}
+              {% if price.shop.name == 'BARBORA' %}
+                €{{ price.price }}
+              {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for price in product.price_set.all %}
+              {% if price.shop.name == 'RIMI' %}
+                €{{ price.price }}
+              {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for price in product.price_set.all %}
+              {% if price.shop.name == 'AIBĖ' %}
+                €{{ price.price }}
+              {% endif %}
+            {% endfor %}
+          </td>
+
+          <td>
+            <form action="{% url 'remove_from_cart' product_id=product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Pašalinti</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+
+    {% else %}
+      <tr>
+        <td colspan="5">Jūsų krepšelis yra tuščias.</td>
+      </tr>
+    {% endif %}
+
+        <tr>
+            <td style="text-align: right;"><strong>Mokėti parduotuvėje viso:</strong></td>
+            <td><strong>€{{ shop_totals.BARBORA|default:"0.00" }}</strong></td>
+            <td><strong>€{{ shop_totals.RIMI|default:"0.00" }}</strong></td>
+            <td><strong>€{{ shop_totals.AIBĖ|default:"0.00" }}</strong></td>
+        </tr>
+  </tbody>
+</table>
+
+</body>
+
+{% endblock %}

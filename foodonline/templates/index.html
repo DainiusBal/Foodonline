@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% block title %}
+<title>Pagrindinis</title>
+{% endblock %}
+
+<body>
+    <h1>Sveiki atvykę į „Foodonline“</h1>
+
+    <p>
+        „Foodonline“ yra programa, leidžianti jums nuolat stebėti ir palyginti kainas iš pagrindinių internetinių maisto produktų tiekėjų. Ši platforma leidžia bet kada, rankiniu būdu atnaujinti kainas.
+    </p>
+
+    <p>
+        Jei į programą norite pridėti papildomą produktą, kreipkitės į sistemos administratorių.
+    </p>
+
+    <!-- Mygtukas nueiti į all_products.html -->
+    <a href="{% url 'all_products' %}">
+        <button type="button">Peržiūrėti produktus</button>
+    </a>
+
+
+</body>
+
+{% endblock %}

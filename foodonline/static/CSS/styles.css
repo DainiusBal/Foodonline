@@ -1,0 +1,81 @@
+/* styles.css */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #aaaaaa;
+}
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.medium-img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  background-color: #bbbbbb;
+}
+
+/* Modify the navbar class selector and update the style */
+.navbar.navbar-expand-lg.navbar-light {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar.navbar-expand-lg.navbar-light .navbar-nav {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar.navbar-expand-lg.navbar-light .nav-item {
+  margin-right: 10px; /* Optional margin between menu items */
+}
+
+.navbar.navbar-expand-lg.navbar-light .nav-item a {
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar.navbar-expand-lg.navbar-light .nav-item a:hover {
+  background-color: #bbbbbb;
+  color: black;
+}
+
+body {
+    background-color: #bbbbbb;
+}
+.container {
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+.shop-price-barbora {
+    color: blue; /
+}
+
+.shop-price-rimi {
+    color: red;
+}
+
+.shop-price-aibe {
+    color: green;
+}
+
+.shop-price {
+    font-weight: bold;
+}

@@ -1,0 +1,9 @@
+2023-12-11 10:16:17,767 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 10:16:46,019 WARNING log Not Found: /favicon.ico
+2023-12-11 10:17:13,664 INFO price_update Starting product price update...
+2023-12-11 10:17:13,665 INFO price_update Updating prices for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-11 10:17:16,991 INFO price_update Prices updated for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-11 10:17:16,991 INFO price_update Updating prices for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-11 10:17:19,762 INFO price_update Prices updated for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-11 10:17:19,762 INFO price_update Updating prices for product: Bananai, 1 kg
+2023-12-11 10:17:22,938 INFO price_update Prices updated for product: Bananai, 1 kg

@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Visos prekės</title>
+{% endblock %}
+
+{% block content %}
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+</head>
+
+<body>
+<h1>Produktų katalogas</h1>
+<p>Kategorijų filtras:</p>
+
+<div class="category-buttons">
+    <form action="{% url 'all_products' %}" method="get">
+        <button type="submit" name="category_id" value="" style="margin: 5px;">
+            <strong>Viskas</strong>
+        </button>
+        {% for category in categories %}
+            <button type="submit" name="category_id" value="{{ category.id }}" style="margin: 5px;{% if selected_category_id == category.id %} background-color: #ccc;{% endif %}">
+                {{ category.name }}
+            </button>
+        {% endfor %}
+    </form>
+    <br>
+</div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="GET" action="{% url 'all_products' %}" class="inline-form">
+                <input type="text" name="query" placeholder="Produkto pavadinimas..." class="form-control">
+                <br>
+                <button type="submit" class="btn btn-primary">Paieška</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form action="{% url 'update_prices' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">Atnaujinti kainas</button>
+            </form>
+            {% if products %}
+                {% for product in products %}
+                    {% if forloop.first %}
+                        <p>Atnaujinta buvo: <b> {{ product.last_update }} </b></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+        </div>
+    </div>
+
+
+    <br>
+<table>
+    <thead>
+        <tr>
+            <th>Nuotrauka</th>
+            <th>Pavadinimas</th>
+            <th>Kainos</th>
+            <th>Veiksmai</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in page_obj %}
+            <tr>
+                <td><a href="{% url 'product_detail' product_id=product.id %}"><img src="{{ product.image.url }}" alt="{{ product.name }}"></a></td>
+                <td><a href="{% url 'product_detail' product_id=product.id %}">{{ product.name }}</a></td>
+                <td>
+                    {% if product.price_set.all %}
+                        <ul>
+                            {% for price in product.price_set.all %}
+                                <li class="shop-price {% if price.shop.name == 'BARBORA' %}shop-price-barbora{% endif %}
+                                     {% if price.shop.name == 'RIMI' %}shop-price-rimi{% endif %}
+                                     {% if price.shop.name == 'AIBĖ' %}shop-price-aibe{% endif %}">
+                                    {{ price.shop.name }} - €{{ price.price }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        Nėra kainų
+                    {% endif %}
+                </td>
+                <td>
+                    <form action="{% url 'add_to_cart' product_id=product.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Į krepšelį</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; pirmas</a>
+            <a href="?page={{ page_obj.previous_page_number }}">ankstesnis</a>
+        {% endif %}
+
+        <span class="current">
+            Puslapis {{ page_obj.number }} iš {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">kitas</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">paskutinis &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</body>
+{% endblock %}
