@@ -26,7 +26,7 @@ img {
   background-color: #bbbbbb;
 }
 
-/* Modify the navbar class selector and update the style */
+
 .navbar.navbar-expand-lg.navbar-light {
   overflow: hidden;
   background-color: #333;
@@ -40,7 +40,7 @@ img {
 }
 
 .navbar.navbar-expand-lg.navbar-light .nav-item {
-  margin-right: 10px; /* Optional margin between menu items */
+  margin-right: 10px;
 }
 
 .navbar.navbar-expand-lg.navbar-light .nav-item a {
@@ -55,6 +55,7 @@ img {
   background-color: #bbbbbb;
   color: black;
 }
+
 
 body {
     background-color: #bbbbbb;

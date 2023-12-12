@@ -7,3 +7,24 @@
 2023-12-11 10:17:19,762 INFO price_update Prices updated for product: DVARO kefyras, 2,5% rieb., 900 g
 2023-12-11 10:17:19,762 INFO price_update Updating prices for product: Bananai, 1 kg
 2023-12-11 10:17:22,938 INFO price_update Prices updated for product: Bananai, 1 kg
+2023-12-11 12:23:50,493 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:25:47,129 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:26:01,510 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:26:53,007 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:30:02,915 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:30:28,118 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:30:36,880 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:30:46,947 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:32:43,402 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:34:20,869 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 12:34:27,325 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 13:42:23,701 INFO autoreload Watching for file changes with StatReloader
+2023-12-11 13:42:25,777 WARNING log Not Found: /favicon.ico
+2023-12-12 09:17:42,392 INFO autoreload Watching for file changes with StatReloader
+2023-12-12 09:17:44,437 WARNING log Not Found: /favicon.ico
+2023-12-12 09:30:20,359 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-12 09:30:20,873 INFO autoreload Watching for file changes with StatReloader
+2023-12-12 10:00:46,821 INFO autoreload Watching for file changes with StatReloader
+2023-12-12 10:05:48,543 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\price_update.py changed, reloading.
+2023-12-12 10:05:49,006 INFO autoreload Watching for file changes with StatReloader
+2023-12-12 10:05:50,913 INFO autoreload Watching for file changes with StatReloader

@@ -9,12 +9,10 @@ logger = logging.getLogger(__name__)
 def update_product_prices():
     try:
         logger.info('Starting product price update...')
-        products_with_urls = Product.objects.exclude(
-            shop_url_1__isnull=True
-        ).exclude(
-            shop_url_2__isnull=True
-        ).exclude(
-            shop_url_3__isnull=True
+        products_with_urls = Product.objects.filter(
+            shop_url_1__isnull=False,
+            shop_url_2__isnull=False,
+            shop_url_3__isnull=False
         )
 
         for product in products_with_urls:

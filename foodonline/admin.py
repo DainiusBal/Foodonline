@@ -30,7 +30,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         try:
-            if not obj.pk:
+            if obj.pk is None:
                 shop_urls = [
                     ('BARBORA', form.cleaned_data['shop_url_1']),
                     ('RIMI', form.cleaned_data['shop_url_2']),
@@ -53,8 +53,6 @@ class ProductAdmin(admin.ModelAdmin):
                 image_path = Scraping.scrap_product_image(url)
                 if image_path:
                     obj.image = image_path
-
-            super().save_model(request, obj, form, change)
 
         except Exception as e:
             logger.error(f'Error in update_prices view: {str(e)}')
