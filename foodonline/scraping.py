@@ -10,10 +10,12 @@ logger = logging.getLogger(__name__)
 
 
 class Scraping:
+    def __init__(self, url):
+        self.url = url
 
     def barbora_scrap(self):
         try:
-            source = requests.get(self).text
+            source = requests.get(self.url).text
             soup = BeautifulSoup(source, "html.parser")
             raw_price = soup.find('span', class_='b-product-price-current-number').text.strip()
             str_price = re.sub(r'[^\d,]', '', raw_price)
@@ -25,7 +27,7 @@ class Scraping:
 
     def scrap_product_name(self):
         try:
-            source = requests.get(self).text
+            source = requests.get(self.url).text
             soup = BeautifulSoup(source, "html.parser")
             name = soup.find('h1', class_='b-product-info--title').text.strip()
             return name
@@ -35,7 +37,7 @@ class Scraping:
 
     def scrap_product_image(self):
         try:
-            source = requests.get(self).text
+            source = requests.get(self.url).text
             soup = BeautifulSoup(source, "html.parser")
             image_url = soup.find('div', class_='b-block-slider--slide').find()['src']
             response = requests.get(image_url)
@@ -59,7 +61,7 @@ class Scraping:
 
     def rimi_scrap(self):
         try:
-            source = requests.get(self).text
+            source = requests.get(self.url).text
             soup = BeautifulSoup(source, "html.parser")
 
             name = soup.find('h1', class_='name').text.strip()
@@ -76,7 +78,7 @@ class Scraping:
 
     def aibe_scrap(self):
         try:
-            source = requests.get(self).text
+            source = requests.get(self.url).text
             soup = BeautifulSoup(source, "html.parser")
 
             name = soup.find('h1', {'itemprop': 'name'}).text.strip()
@@ -91,12 +93,14 @@ class Scraping:
 
     def scrape_by_domain(url):
         try:
+            scraper = Scraping(url)
+
             if 'barbora.lt' in url:
-                return Scraping.barbora_scrap(url)
+                return scraper.barbora_scrap()
             elif 'rimi.lt' in url:
-                return Scraping.rimi_scrap(url)
+                return scraper.rimi_scrap()
             elif 'aibesmaistas.lt' in url:
-                return Scraping.aibe_scrap(url)
+                return scraper.aibe_scrap()
             else:
                 return None
 

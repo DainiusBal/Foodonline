@@ -36,7 +36,7 @@ class ProductAdmin(admin.ModelAdmin):
                     ('RIMI', form.cleaned_data['shop_url_2']),
                     ('AIBĖ', form.cleaned_data['shop_url_3']),
                 ]
-                name = Scraping.scrap_product_name(form.cleaned_data['shop_url_1'])
+                name = Scraping(form.cleaned_data['shop_url_1']).scrap_product_name()
                 if name:
                     obj.name = name
 
@@ -48,11 +48,11 @@ class ProductAdmin(admin.ModelAdmin):
                         shop, _ = Shop.objects.get_or_create(name=shop_name)
                         Price.objects.create(product=obj, shop=shop, price=price)
 
-                for url in shop_urls:
-                    url = shop_urls[0][1]
-                image_path = Scraping.scrap_product_image(url)
+                url = shop_urls[0][1]
+                image_path = Scraping(url).scrap_product_image()
                 if image_path:
                     obj.image = image_path
+                    obj.save()
 
         except Exception as e:
             logger.error(f'Error in update_prices view: {str(e)}')

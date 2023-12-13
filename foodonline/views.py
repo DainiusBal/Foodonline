@@ -5,9 +5,8 @@ from .forms import ProductForm
 from .scraping import Scraping
 from django.contrib import messages
 from django.core.paginator import Paginator
-
-
 import logging
+
 
 logger = logging.getLogger(__name__)
 
@@ -141,7 +140,7 @@ def add_product(request):
                     ('AIBĖ', form.cleaned_data['shop_url_3']),
                 ]
 
-                name = Scraping.scrap_product_name(form.cleaned_data['shop_url_1'])
+                name = Scraping(form.cleaned_data['shop_url_1']).scrap_product_name()
                 if name:
                     obj.name = name
 
@@ -153,15 +152,14 @@ def add_product(request):
                         shop, _ = Shop.objects.get_or_create(name=shop_name)
                         Price.objects.create(product=obj, shop=shop, price=price)
 
-                for url in shop_urls:
-                    url = shop_urls[0][1]
-                image_path = Scraping.scrap_product_image(url)
+                url = shop_urls[0][1]
+                image_path = Scraping(url).scrap_product_image()
                 if image_path:
                     obj.image = image_path
 
                 obj.save()
                 messages.success(request, 'Produktas sėkmingai pridėtas')
-                return redirect('all_products')  # Redirect after successful form submission
+                return redirect('all_products')
         else:
             form = ProductForm()
 

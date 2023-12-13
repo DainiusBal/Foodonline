@@ -80,3 +80,7 @@ body {
 .shop-price {
     font-weight: bold;
 }
+
+.navbar-brand {
+  max-width: 200px;
+}
