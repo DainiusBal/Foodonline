@@ -1,6 +1,7 @@
 # Foodonline - Product Price Comparison Tool
 
 An application that allows users to compare prices of selected products from three different online shops.
+The user is provided with information on where they can purchase the same basket of products at a lower cost.
 
 ## Features
 
