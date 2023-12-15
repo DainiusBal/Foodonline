@@ -1,21 +1,15 @@
-# Product Price Comparison Tool - "Foodonline"
+# Foodonline - Product Price Comparison Tool
 
 An application that allows users to compare prices of selected products from three different online shops.
 
 ## Features
 
-- **Product Selection**: Users can add the products they wish to compare.
+- **Product Selection**: Users can add selected products they wish to compare.
 - **Shop Comparison**: Fetches and displays prices of the same product from three specified online shops.
 - **Cart Comparison**: Compares total cart prices of from different suppliers.
 
-## Installation
 
-### Requirements
-- Python 3.x installed
-- (Any other specific prerequisites)
-
-
-## Steps
+## Installation Steps
 1. Clone the repository:
    ```bash
    git clone https://github.com/DainiusBal/Foodonline.git
@@ -42,4 +36,10 @@ An application that allows users to compare prices of selected products from thr
 
    http://127.0.0.1:8000/
 
+
+## Contact
+
+### Dainius Balionis
+- **Email:** balionisdainius@gmail.com
+- **GitHub:** [GitHub Profile](https://github.com/DainiusBal/Foodonline)
 
