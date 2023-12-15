@@ -80,3 +80,25 @@ body {
 .navbar-brand {
   max-width: 200px;
 }
+
+.product-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.product-details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    padding-top: 10%;
+}

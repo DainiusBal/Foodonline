@@ -1,42 +1,70 @@
 {% extends "base.html" %}
-{% block content %}
 
 {% block title %}
 <title>Produkto apžvalga</title>
 {% endblock %}
 
-<head>
-    <title>{{ product.name }}</title>
-</head>
+{% block content %}
+
 <body>
+
+<div class="product-container">
+
     <h1>{{ product.name }}</h1>
-    <p>Kategorija: {{ product.category }}</p>
 
-    <h2>Kainos parduotuvėse:</h2>
-    <ul>
-    {% for price in product.price_set.all %}
-        <li class="shop-price {% if price.shop.name == 'BARBORA' %}shop-price-barbora{% endif %}
-                                     {% if price.shop.name == 'RIMI' %}shop-price-rimi{% endif %}
-                                     {% if price.shop.name == 'AIBĖ' %}shop-price-aibe{% endif %}">
-            {% if price.shop.name == 'BARBORA' %}
-                BARBORA - €{{ price.price }} <a href="{{ product.shop_url_1 }}" target="_blank">&ensp;&ensp;<button> Eiti į BARBORA </button></a>
-            {% elif price.shop.name == 'RIMI' %}
-                RIMI - €{{ price.price }} <a href="{{ product.shop_url_2 }}" target="_blank">&emsp;&emsp;&ensp;&ensp;&ensp;<button> Eiti į RIMI </button></a>
-            {% elif price.shop.name == 'AIBĖ' %}
-                AIBĖ - €{{ price.price }} <a href="{{ product.shop_url_3 }}" target="_blank">&emsp;&emsp;&ensp;&ensp;&ensp;<button> Eiti į AIBĖ </button></a>
+    <div class="product-details">
+        <div class="product-image">
+            {% if product.image %}
+            <img src="{{ product.image.url }}" alt="Product Image" class="medium-img"/>
+            {% else %}
+            <p>No image available</p>
             {% endif %}
-        </li>
-    {% endfor %}
-    </ul>
+        </div>
 
-{% if product.image %}
-    <img src="{{ product.image.url }}" alt="Product Image" class="medium-img" />
-{% else %}
-    <p>No image available</p>
-{% endif %}
+        <div>
+            <p>Kategorija: <a href="{% url 'all_products' %}?category_id={{ product.category.id }}">{{ product.category }}</a></p>
 
-    <p>Atnaujinta: {{ product.last_update }}</p>
+            <h2>Kainos parduotuvėse:</h2>
+            <br>
+            <ul>
+                {% for price in product.price_set.all %}
+                <li class="shop-price
+            {% if price.shop.name == 'BARBORA' %}
+                shop-price-barbora
+            {% elif price.shop.name == 'RIMI' %}
+                shop-price-rimi
+            {% elif price.shop.name == 'AIBĖ' %}
+                shop-price-aibe
+            {% endif %}
+        ">
+                    {% if price.shop.name == 'BARBORA' %}
+                    BARBORA - €{{ price.price }} <a href="{{ product.shop_url_1 }}" target="_blank">&ensp;&ensp;<button>
+                    Eiti į BARBORA
+                </button>
+                </a>
+                    <hr>
+                    {% elif price.shop.name == 'RIMI' %}
+                    RIMI - €{{ price.price }} <a href="{{ product.shop_url_2 }}" target="_blank">&emsp;&emsp;&ensp;&ensp;&ensp;<button>
+                    Eiti į RIMI
+                </button>
+                </a>
+                    {% elif price.shop.name == 'AIBĖ' %}
+                    <hr>
+                    AIBĖ - €{{ price.price }} <a href="{{ product.shop_url_3 }}" target="_blank">&emsp;&emsp;&ensp;&ensp;&ensp;<button>
+                    Eiti į AIBĖ
+                </button>
+                </a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            <br>
+
+            <p>Atnaujinta: {{ product.last_update }}</p>
+        </div>
+    </div>
+</div>
+
 </body>
-
 
 {% endblock %}
