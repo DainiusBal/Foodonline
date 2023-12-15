@@ -54,19 +54,7 @@ def all_products(request):
         logger.error(f'Error in all_product view: {str(e)}')
 
 
-def add_to_cart(request, product_id):
-    try:
-        cart = request.session.get('cart', [])
-        cart.append(product_id)
-        request.session['cart'] = cart
-
-    except Exception as e:
-        logger.error(f'Error in add_to_cart view: {str(e)}')
-
-    return redirect('all_products')
-
-
-def basket(request):
+def main_cart(request):
     try:
         cart_product_ids = request.session.get('cart', [])
         cart_products = Product.objects.filter(id__in=cart_product_ids)
@@ -89,6 +77,18 @@ def basket(request):
         logger.error(f'Error in basket view: {str(e)}')
 
     return render(request, 'basket.html', context)
+
+
+def add_to_cart(request, product_id):
+    try:
+        cart = request.session.get('cart', [])
+        cart.append(product_id)
+        request.session['cart'] = cart
+
+    except Exception as e:
+        logger.error(f'Error in add_to_cart view: {str(e)}')
+
+    return redirect('all_products')
 
 
 def remove_from_cart(request, product_id):

@@ -12,13 +12,13 @@ logger = logging.getLogger(__name__)
 class Scraping:
     def __init__(self, url):
         self.url = url
+        self.source = requests.get(self.url).text
+        self.soup = BeautifulSoup(self.source, "html.parser")
 
     def barbora_scrap(self):
         try:
-            source = requests.get(self.url).text
-            soup = BeautifulSoup(source, "html.parser")
-            raw_price = soup.find('span', class_='b-product-price-current-number').text.strip()
-            str_price = re.sub(r'[^\d,]', '', raw_price)
+            raw_price = self.soup.find('span', class_='b-product-price-current-number').text.strip()
+            str_price = re.sub(r'[^\d,]', '', raw_price, re.MULTILINE)
             price = float(str_price.replace(',', '.'))
             return price
         except Exception as e:
@@ -27,9 +27,7 @@ class Scraping:
 
     def scrap_product_name(self):
         try:
-            source = requests.get(self.url).text
-            soup = BeautifulSoup(source, "html.parser")
-            name = soup.find('h1', class_='b-product-info--title').text.strip()
+            name = self.soup.find('h1', class_='b-product-info--title').text.strip()
             return name
         except Exception as e:
             logger.error(f'Error in scrap_product_name: {str(e)}')
@@ -37,9 +35,7 @@ class Scraping:
 
     def scrap_product_image(self):
         try:
-            source = requests.get(self.url).text
-            soup = BeautifulSoup(source, "html.parser")
-            image_url = soup.find('div', class_='b-block-slider--slide').find()['src']
+            image_url = self.soup.find('div', class_='b-block-slider--slide').find()['src']
             response = requests.get(image_url)
 
             if response.status_code == 200:
@@ -61,14 +57,10 @@ class Scraping:
 
     def rimi_scrap(self):
         try:
-            source = requests.get(self.url).text
-            soup = BeautifulSoup(source, "html.parser")
-
-            name = soup.find('h1', class_='name').text.strip()
-            raw_price = soup.find('div', class_='price').text.strip()
+            raw_price = self.soup.find('div', class_='price').text.strip()
             str_price_1 = re.search(r'(^\d\s+\d{2})', raw_price, re.MULTILINE)
             matched_text = str_price_1.group()
-            str_price_2 = re.sub(r'[^\d,]', r'', matched_text)
+            str_price_2 = re.sub(r'[^\d,]', r'', matched_text, re.MULTILINE)
             price = float(str_price_2[:-2] + '.' + str_price_2[-2:])
             return price
 
@@ -78,12 +70,8 @@ class Scraping:
 
     def aibe_scrap(self):
         try:
-            source = requests.get(self.url).text
-            soup = BeautifulSoup(source, "html.parser")
-
-            name = soup.find('h1', {'itemprop': 'name'}).text.strip()
-            raw_price = soup.find('span', {'id': 'our_price_display'}).text.strip()
-            str_price = re.sub(r'[^\d,]', '', raw_price)
+            raw_price = self.soup.find('span', {'id': 'our_price_display'}).text.strip()
+            str_price = re.sub(r'[^\d,]', '', raw_price, re.MULTILINE)
             price = float(str_price.replace(',', '.'))
             return price
 

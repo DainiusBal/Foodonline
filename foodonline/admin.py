@@ -36,11 +36,6 @@ class ProductAdmin(admin.ModelAdmin):
                     ('RIMI', form.cleaned_data['shop_url_2']),
                     ('AIBĖ', form.cleaned_data['shop_url_3']),
                 ]
-                name = Scraping(form.cleaned_data['shop_url_1']).scrap_product_name()
-                if name:
-                    obj.name = name
-
-                super().save_model(request, obj, form, change)
 
                 for shop_name, url in shop_urls:
                     price = Scraping.scrape_by_domain(url)
@@ -48,8 +43,12 @@ class ProductAdmin(admin.ModelAdmin):
                         shop, _ = Shop.objects.get_or_create(name=shop_name)
                         Price.objects.create(product=obj, shop=shop, price=price)
 
-                url = shop_urls[0][1]
-                image_path = Scraping(url).scrap_product_image()
+                first_url = shop_urls[0][1]
+                name = Scraping(first_url).scrap_product_name()
+                image_path = Scraping(first_url).scrap_product_image()
+
+                if name:
+                    obj.name = name
                 if image_path:
                     obj.image = image_path
                     obj.save()

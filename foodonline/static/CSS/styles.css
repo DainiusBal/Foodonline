@@ -22,10 +22,6 @@ img {
   max-height: 300px;
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-light {
-  background-color: #bbbbbb;
-}
-
 
 .navbar.navbar-expand-lg.navbar-light {
   overflow: hidden;

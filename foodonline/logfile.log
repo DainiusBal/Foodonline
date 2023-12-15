@@ -899,3 +899,84 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 16: ''
 2023-12-12 16:53:16,579 INFO autoreload Watching for file changes with StatReloader
 2023-12-12 16:53:33,825 INFO autoreload Watching for file changes with StatReloader
 2023-12-12 16:54:13,491 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 12:57:01,093 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 12:57:35,994 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 12:58:04,966 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\forms.py changed, reloading.
+2023-12-13 12:58:05,467 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:00:33,061 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:00:41,554 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:00:44,363 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:01:26,592 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 13:01:27,133 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:01:51,858 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:02:24,931 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 13:02:25,474 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:02:46,518 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:02:56,051 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 13:02:56,521 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:02:59,067 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:46:09,851 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:46:45,172 INFO scraping Image download was successful
+2023-12-13 13:47:24,903 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:47:27,674 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:47:38,130 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:48:15,152 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:48:22,352 INFO scraping Image download was successful
+2023-12-13 13:50:43,208 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:50:46,593 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 13:50:47,070 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:58:53,904 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 13:58:54,374 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 13:59:59,363 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:03:39,762 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 14:03:40,286 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:03:48,800 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 14:03:49,331 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:03:58,677 INFO scraping Image download was successful
+2023-12-13 14:04:39,988 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:05:04,073 INFO scraping Image download was successful
+2023-12-13 14:05:10,674 ERROR scraping Error in aibe_scrap: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2023-12-13 14:06:06,082 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:08:21,311 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 14:08:21,794 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:08:41,547 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 14:08:42,026 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:08:49,650 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 14:47:36,241 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 15:04:51,559 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 15:06:09,162 INFO price_update Starting product price update...
+2023-12-13 15:06:09,163 INFO price_update Updating prices for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-13 15:06:12,987 INFO price_update Prices updated for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-13 15:06:12,987 INFO price_update Updating prices for product: Bananai, 1 kg
+2023-12-13 15:06:16,277 INFO price_update Prices updated for product: Bananai, 1 kg
+2023-12-13 15:06:22,974 INFO price_update Updating prices for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-13 15:06:25,822 INFO price_update Prices updated for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-13 15:06:29,068 ERROR price_update Error in update_product_prices: Price matching query does not exist.
+2023-12-13 15:08:42,060 ERROR admin Error in update_prices view: save() prohibited to prevent data loss due to unsaved related object 'product'.
+2023-12-13 15:09:46,198 INFO autoreload Watching for file changes with StatReloader
+2023-12-13 15:09:58,214 ERROR admin Error in update_prices view: save() prohibited to prevent data loss due to unsaved related object 'product'.
+2023-12-13 15:10:28,801 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\admin.py changed, reloading.
+2023-12-13 15:10:29,275 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 10:28:45,351 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 10:28:48,395 WARNING log Not Found: /favicon.ico
+2023-12-14 10:29:12,452 INFO scraping Image download was successful
+2023-12-14 10:40:21,245 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\views.py changed, reloading.
+2023-12-14 10:40:21,768 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 11:17:32,491 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\views.py changed, reloading.
+2023-12-14 11:17:32,962 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 11:17:58,826 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\views.py changed, reloading.
+2023-12-14 11:17:59,285 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 11:18:09,845 INFO autoreload C:\Users\daini\PycharmProjects\Python_baigiamasis_PTU17\foodonline\views.py changed, reloading.
+2023-12-14 11:18:10,345 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 11:25:11,465 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 11:25:27,315 INFO price_update Starting product price update...
+2023-12-14 11:25:27,317 INFO price_update Updating prices for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-14 11:25:30,917 INFO price_update Prices updated for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-14 11:25:30,917 INFO price_update Updating prices for product: Bananai, 1 kg
+2023-12-14 11:25:35,620 INFO price_update Prices updated for product: Bananai, 1 kg
+2023-12-14 11:25:48,367 INFO price_update Updating prices for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-14 11:25:52,436 INFO price_update Prices updated for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-14 11:44:46,658 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 11:44:54,439 WARNING log Not Found: /favicon.ico
+2023-12-14 11:45:14,400 INFO autoreload Watching for file changes with StatReloader
+2023-12-14 11:45:30,618 INFO autoreload Watching for file changes with StatReloader

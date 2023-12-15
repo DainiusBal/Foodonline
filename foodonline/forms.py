@@ -9,12 +9,12 @@ class ProductAdminForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        fields = ['name', 'shop_url_1', 'shop_url_2', 'shop_url_3']
+        fields = ['name', 'shop_url_1', 'shop_url_2', 'shop_url_3', 'category']
 
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'shop_url_1', 'shop_url_2', 'shop_url_3', 'category']
-        exclude = ['name']
+        fields = ['shop_url_1', 'shop_url_2', 'shop_url_3', 'category']
+
 
