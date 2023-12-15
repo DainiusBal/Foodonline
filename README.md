@@ -22,7 +22,6 @@ An application that allows users to compare prices of selected products from thr
    ```bash
    pip install -r requirements.txt
 
-
 ## Usage
 
 1. Run the development server
