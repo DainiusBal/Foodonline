@@ -22,9 +22,6 @@ An application that allows users to compare prices of selected products from thr
    ```bash
    pip install -r requirements.txt
 
-4. Perform migrations:
-   ```bash
-   python manage.py migrate
 
 ## Usage
 
