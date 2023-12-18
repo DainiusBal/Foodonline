@@ -39,11 +39,9 @@
                 <button type="submit" class="btn btn-success">Atnaujinti kainas</button>
             </form>
             {% if products %}
-                {% for product in products %}
-                    {% if forloop.first %}
-                        <p>Atnaujinta buvo: <b> {{ product.last_update }} </b></p>
+                    {% if products.0 %}
+                        <p>Atnaujinta buvo: <b> {{ products.0.last_update }} </b></p>
                     {% endif %}
-                {% endfor %}
             {% endif %}
                 <div>
     {% if messages %}
