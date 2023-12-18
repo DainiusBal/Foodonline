@@ -24,3 +24,16 @@
 2023-12-15 16:40:59,750 INFO price_update Prices updated for product: DVARO kefyras, 2,5% rieb., 900 g
 2023-12-15 16:45:09,982 INFO autoreload Watching for file changes with StatReloader
 2023-12-15 16:46:27,704 INFO autoreload Watching for file changes with StatReloader
+2023-12-15 16:48:19,725 INFO autoreload Watching for file changes with StatReloader
+2023-12-15 16:51:35,296 INFO autoreload Watching for file changes with StatReloader
+2023-12-15 21:57:17,297 INFO autoreload Watching for file changes with StatReloader
+2023-12-15 21:58:44,451 INFO price_update Starting product price update...
+2023-12-15 21:58:44,455 INFO price_update Updating prices for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-15 21:58:49,734 INFO price_update Prices updated for product: DVARO pienas, 2,5 % rieb., 2 l
+2023-12-15 21:58:49,734 INFO price_update Updating prices for product: Bananai, 1 kg
+2023-12-15 21:58:58,687 INFO price_update Prices updated for product: Bananai, 1 kg
+2023-12-15 21:59:07,193 INFO price_update Updating prices for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-15 21:59:12,404 INFO price_update Prices updated for product: DVARO kefyras, 2,5% rieb., 900 g
+2023-12-16 14:45:12,917 INFO autoreload Watching for file changes with StatReloader
+2023-12-16 14:45:52,269 INFO autoreload Watching for file changes with StatReloader
+2023-12-16 14:46:04,248 INFO autoreload Watching for file changes with StatReloader
